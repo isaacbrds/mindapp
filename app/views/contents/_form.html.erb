@@ -13,6 +13,9 @@
   <%= form.text_area :description, cols: 30, rows: 3 %>
 </div>
 
+<%= form.select :tags, options_for_select(current_user.tags.pluck(:title) , content.tags.pluck(:title)), {}, { class: 'select2 form-control', multiple: 'multiple' } %>
+
+
 <div class="actions">
   <%= form.submit %>
 </div>
