@@ -1,8 +1,16 @@
 class ContentsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_content, only: [:show , :update, :edit, :destroy]
+  
   def index 
+    
     @contents = current_user.contents
+    tag_titles = params[:tags]
+    
+    if tag_titles.present?
+      @contents = @contents.joins(:tags).where(tags: { title: tag_titles }).distinct 
+    end
+
   end
 
   def new  
