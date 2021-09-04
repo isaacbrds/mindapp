@@ -1,0 +1,13 @@
+<h1>Contents</h1>
+
+<% @contents.each do |content| %>
+<p>
+<%= content.title %> | 
+<%= content.description %> |
+<%= link_to ' <- Editar', edit_content_path(content) %> | 
+<%= link_to 'Exibir', content_path(content) %> |
+<%= link_to 'Excluir', content_path(content), method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>
+<% end %>
+
+<%= link_to 'Novo', new_content_path %>

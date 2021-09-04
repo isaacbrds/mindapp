@@ -12,6 +12,8 @@
 
   <body>
     <% if current_user %>
+      <%= link_to 'Home', root_path %>
+      <%= link_to 'Conteúdos', contents_path %>  
       <%= link_to 'deslogar', destroy_user_session_path, method: :delete %>
     <% end %>
     <%= yield %>

@@ -1,0 +1,23 @@
+<% if content.errors.any? %>
+  <%= content.errors.full_messages.join(', ')%>
+<% end %>
+
+<%= form_with(model: content, local: true)  do |form| %>
+<div class="field">
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+</div>
+
+<div class="field">
+  <%= form.label :description %>
+  <%= form.text_area :description, cols: 30, rows: 3 %>
+</div>
+
+<div class="actions">
+  <%= form.submit %>
+</div>
+
+<% end %>
+
+
+<%= link_to 'Voltar', contents_path %>
