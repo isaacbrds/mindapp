@@ -3,7 +3,8 @@
 </p>
 
 <p>
-  <strong>Descrição</strong>: <%= @content.description %>
+  <strong>Descrição</strong>: 
+  <%= raw @markdown.render(@content.description) %>
 </p>
 
 <p>
