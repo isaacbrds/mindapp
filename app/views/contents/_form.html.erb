@@ -3,25 +3,27 @@
 <% end %>
 
 <%= form_with(model: content, local: true)  do |form| %>
-<div class="field">
+<div class="form-group">
   <%= form.label :title %>
-  <%= form.text_field :title %>
+  <%= form.text_field :title , class: 'form-control' %>
 </div>
 
-<div class="field">
+<div class="form-group">
   <%= form.label :description %>
-  <%= form.text_area :description, cols: 30, rows: 3 %>
+  <%= form.text_area :description, cols: 30, rows: 3 , class: 'form-control'  %>
 </div>
-<div class="field">
+<div class="form-group">
+  <%= form.label :tags %>
   <%= form.select :tags, options_for_select(current_user.tags.pluck(:title) , content.tags.pluck(:title)), {}, { class: 'select2 form-control', multiple: 'multiple' } %>
 </div>
+<br/>
 
-
-<div class="actions">
-  <%= form.submit %>
+<div class="mt-2">
+  <%= form.submit 'Enviar', class: 'btn btn-primary' %>
 </div>
 
 <% end %>
 
-
-<%= link_to 'Voltar', contents_path %>
+<div class="pt-3">
+  <%= link_to 'Voltar', contents_path %>
+</div>
