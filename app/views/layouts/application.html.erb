@@ -2,22 +2,27 @@
 <html>
   <head>
     <title>Mindapp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <%= csrf_meta_tags %> <%= csp_meta_tag %> 
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %> 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
     <div class="container">
-      <% if current_user %>
-      <%= link_to 'Home', root_path %>
-      <%= link_to 'Conteúdos', contents_path %>  
-      <%= link_to 'deslogar', destroy_user_session_path, method: :delete %>
-    <% end %>
-    <%= yield %>
-    </div>
-    
+      <%= render "shared/navigation" %>
+      
+      <% flash.each do |key, value| %>
+        <div class="<%= flash_class(key) %>" role="alert">
+              <%= value %>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% end %>
+
+      <%= yield %>
+
+      
+      <%= render "shared/footer" %>
+      
+    </div>   
   </body>
 </html>

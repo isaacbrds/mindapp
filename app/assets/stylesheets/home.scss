@@ -2,53 +2,118 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-ul.cloud a[data-weight="1"] { --size: 1; }
-ul.cloud a[data-weight="2"] { --size: 2; }
-ul.cloud a[data-weight="3"] { --size: 3; }
-ul.cloud a[data-weight="4"] { --size: 4; }
-ul.cloud a[data-weight="5"] { --size: 5; }
-ul.cloud a[data-weight="6"] { --size: 6; }
-ul.cloud a[data-weight="7"] { --size: 7; }
-ul.cloud a[data-weight="8"] { --size: 8; }
-ul.cloud a[data-weight="9"] { --size: 9; }
+// ul.cloud a[data-weight="1"] { --size: 1; }
+// ul.cloud a[data-weight="2"] { --size: 2; }
+// ul.cloud a[data-weight="3"] { --size: 3; }
+// ul.cloud a[data-weight="4"] { --size: 4; }
+// ul.cloud a[data-weight="5"] { --size: 5; }
+// ul.cloud a[data-weight="6"] { --size: 6; }
+// ul.cloud a[data-weight="7"] { --size: 7; }
+// ul.cloud a[data-weight="8"] { --size: 8; }
+// ul.cloud a[data-weight="9"] { --size: 9; }
 
 
-a{
-  text-decoration: none;
-  text-transform: lowercase;
+// a{
+//   text-decoration: none;
+//   text-transform: lowercase;
+// }
+
+// ul{
+//   list-style: none;
+//   padding-left: 0;
+//   display: flex;
+//   flex-wrap: wrap;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// ul.cloud {
+//   list-style: none;
+//   padding-left: 0;
+//   display: flex;
+//   flex-wrap: wrap;
+//   align-items: center;
+//   justify-content: center;
+//   line-height: 2.5rem;
+// }
+
+
+// ul.cloud a {
+//   color: #a33;
+//   display: block;
+//   font-size: 1.5rem;
+//   padding: 0.125rem 0.25rem;
+//   text-decoration: none;
+//   position: relative;
+//   --size: 4;
+//   font-size: calc(var(--size) * 0.25rem + 0.5rem);
+// }
+
+// ul.cloud li:nth-child(2n) a { --color: #181 !important; }
+// ul.cloud li:nth-child(2n+1) a { --color: #181 !important; }
+// ul.cloud li:nth-child(3n+4) a { --color: #33a; }
+// ul.cloud li:nth-child(4n+5) a { --color: #c38; }
+
+:root {
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #f4623a;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-primary: #f4623a;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-font-sans-serif: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 }
 
-ul{
-  list-style: none;
-  padding-left: 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+a:link {text-decoration: none}
+a:visited {text-decoration: none}
+a:hover {text-decoration: underline;
+color: #FF0000;
 }
+a:active {text-decoration: none}
 
-ul.cloud {
-  list-style: none;
-  padding-left: 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  line-height: 2.5rem;
+#box-mais-buscadas {
+  
+  margin:1.33em 0 0 0;
+  padding:1.67em 0;
+  width:50.5em;
 }
-
-
-ul.cloud a {
-  color: #a33;
-  display: block;
-  font-size: 1.5rem;
-  padding: 0.125rem 0.25rem;
-  text-decoration: none;
-  position: relative;
-  --size: 4;
-  font-size: calc(var(--size) * 0.25rem + 0.5rem);
+#box-mais-buscadas h2 {
+  
+  font-size:1.835em;
+  letter-spacing:-0.08em;
+  margin-bottom:0.4em;
 }
+#box-mais-buscadas p {
+  line-height:1.83em;
+}
+#box-mais-buscadas a {color:#06C;}
+#box-mais-buscadas a:hover {text-decoration:underline; color: #F00; text-transform: capitalize;}
+#box-mais-buscadas .tags {margin-bottom:0.83em;}
 
-ul.cloud li:nth-child(2n+1) a { --color: #181; }
-ul.cloud li:nth-child(3n+1) a { --color: #33a; }
-ul.cloud li:nth-child(4n+1) a { --color: #c38; }
+#box-mais-buscadas .t1 {font-size:1.335em; color: var(--bs-indigo)}
+#box-mais-buscadas .t2 {font-size:1.835em; color:var(--bs-dark)}
+#box-mais-buscadas .t3 {font-size:2.335em; color:var(--bs-warning)}
+#box-mais-buscadas .t4 {font-size:2.835em; color:var(--bs-info)}
+#box-mais-buscadas .t5 {font-size:3.335em; color:var(--bs-secondary)}
+#box-mais-buscadas .t6 {font-size:3.835em; color: var(--bs-success)}
+#box-mais-buscadas .t7 {font-size:4.335em; color:var(--bs-orange)}
+#box-mais-buscadas .t8 {font-size:4.835em; color: var(--bs-teal)}
+#box-mais-buscadas .t9 {font-size:5.335em; color:var(--bs-cyan)}
+
