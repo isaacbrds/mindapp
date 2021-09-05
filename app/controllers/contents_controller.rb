@@ -4,7 +4,7 @@ class ContentsController < ApplicationController
   
   def index 
     
-    @contents = current_user.contents
+    @contents = current_user.contents.with_rich_text_description_and_embeds
     tag_titles = params[:tags]
     
     if tag_titles.present?
@@ -18,7 +18,8 @@ class ContentsController < ApplicationController
   end
 
   def create
-    @content = current_user.contents.build(content_params)
+    @content = Content.create(content_params)
+    @content.user = current_user
     if @content.save 
       associated_tags!
       redirect_to contents_path, notice: 'Content was successfully created!'
@@ -38,10 +39,7 @@ class ContentsController < ApplicationController
     end
   end
 
-  def show
-    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true)
-
-  end
+  def show;  end
 
   def destroy 
     @content.destroy
@@ -50,7 +48,7 @@ class ContentsController < ApplicationController
   private 
 
   def content_params 
-    params.require(:content).permit(:title, :description)
+    params.require(:content).permit(:title, :description, :tags)
   end
 
   def tags_params 

@@ -1,7 +1,15 @@
 <h1>Home</h1>
 <% @tags_data.each do |tag_title, count| %>
-  <span style='font-size: <%= count*20 %>px'> 
+  <span style='font-size: <%= count*20 %>px;'> 
     <%= link_to tag_title, contents_path(tags: [tag_title]) %> 
-    
   </span>
 <% end %>
+
+
+<ul class="cloud" role="navigation" aria-label="Webdev tag cloud">
+  <% @tags_data.each do |tag_title, count| %>
+  <li>
+    <%= link_to tag_title, contents_path(tags: [tag_title]), html_options = {'data-weight': count, 'data-show-value': count }  %>  
+  </li>
+  <% end %>
+</ul>  

@@ -24,3 +24,6 @@ $(document).on('turbolinks:load', function() {
     tokenSeparators: [',', ' ']
   })
 });
+
+require("trix")
+require("@rails/actiontext")

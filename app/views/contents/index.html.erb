@@ -13,7 +13,7 @@
 <% @contents.each do |content| %>
 <p>
 <strong>Title: </strong> <%= content.title %> | 
-<strong>Description: </strong> <%= content.description %> |
+
 <strong>Tags: </strong> <%= content.tags.pluck(:title).join(', ') %> |
 <%= link_to ' <- Editar', edit_content_path(content) %> | 
 <%= link_to 'Exibir', content_path(content) %> |
